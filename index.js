@@ -44,11 +44,11 @@ app.post("/form", upload.single("file"), async (req, res) => {
     const { reno, snm, bch, sed, adr } = req.body;
 
     await pool.query(
-      `INSERT INTO Registered_details
-      (rollno, student_name, branch, semester, image, address)
-      VALUES ($1,$2,$3,$4,$5,$6)`,
-      [reno, snm, bch, sed, file, adr]
-    );
+        `INSERT INTO Registered_details
+        (Registeration_no, Student_name, Batch, Department, Upload_resume, Address)
+        VALUES ($1,$2,$3,$4,$5,$6)`,
+        [reno, snm, bch, sed, file, adr]
+        );
 
     console.log("Data Stored Successfully");
 
