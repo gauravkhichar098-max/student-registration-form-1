@@ -93,3 +93,98 @@
     </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        #main
+        {
+            width: 40vw;
+            height: 70vh;
+            background-color: antiquewhite;
+            top: 20%;
+            left: 25%;
+            position: absolute;
+            border-radius: 20px;
+            box-shadow: 3px 3px 3px 5px black;
+            display: none;
+            animation: sto 1s linear 1;
+        }
+        @keyframes sto {
+            0%{transform: scale(0)}
+        }
+        #main>hr 
+        {
+            border: 1px solid black;
+        }
+        #main>input
+        {
+            width: 10vw;
+        }
+        .btn:hover
+        {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <a href="show">showdata</a>
+    <form action="/form" method="post" enctype="multipart/form-data">
+    <div id="main">
+        <center><h3><b>Registration Form</b></h3></center>
+        <hr>
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<b>Registration no:</b> <input type="text" autofocus id="rno" name="reno"> <br> <br>
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<b>Student name:</b> &nbsp;&nbsp;<input type="text" id="nm" name="snm"> <br> <br>
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<b>Batch:</b> &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<input type="text" id="bc" name="bch"> <br> <br>
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<b>Department:</b> 
+        &ensp;&ensp;&ensp;&nbsp;<select id="se" name="sed">
+            <option value="">Select</option>
+            <option value="Computer Engg.">Computer Engg.</option>
+            <option value="Mechanical Engg.">Mechanical Engg.</option>
+            <option value="Electrical Engg.">Electrical Engg.</option>
+            <option value="Civil Engg.">Civil Engg.</option>
+        </select> <br> <br>
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<b>Upload resume:</b> <center><input type="file" id="fe" name="file"></center> <br> <br>
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<b>Address:</b>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<input type="text" id="ad" name="adr"> <br> <br>
+        <center><button type="reset" class="btn">Reset</button> <button type="submit" class="btn" onclick="return register()">Submit</button></center>
+    </div>
+    </form>
+    <script>
+        setTimeout(()=>
+        {
+            document.getElementById("main").style.display="block";
+        },3000);
+        function register()
+        {
+            let rno=document.getElementById("rno").value;
+            let nm=document.getElementById("nm").value;
+            let bc=document.getElementById("bc").value;
+            let se=document.getElementById("se").value;
+            let fe=document.getElementById("fe").value;
+            let ad=document.getElementById("ad").value;
+            if (rno=="" || nm=="" || bc=="" || se=="" || fe=="" || ad=="") 
+            {
+                alert("Please Enter All Details")
+                return false;
+            }
+            else
+            {
+                alert("Response Has Been Submitted");
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>
