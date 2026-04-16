@@ -55,7 +55,7 @@ app.post("/form", upload.single("file"), async (req, res) => {
     res.redirect("/");
   } catch (error) {
     console.log(error);
-    res.send("Database Error");
+    res.send(error.message);
   }
 });
 
